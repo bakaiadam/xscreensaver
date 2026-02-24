@@ -644,7 +644,8 @@ xscreensaver_unlock_cb (sd_bus_message *m, void *arg, sd_bus_error *ret_error)
 static Bool
 good_reason_p (const char *s)
 {
-  if (!s || !*s) return True;
+//  if (!s || !*s) return True;
+  if (!s || !*s) return False; //empty is not a good reason.
   if (strcasestr (s, "video")) return True;
   if (strcasestr (s, "audio")) return False;
   if (strcasestr (s, "download")) return False;
